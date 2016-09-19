@@ -2,6 +2,8 @@
 
 **Instructions: ** Define each of the following Git concepts.
 
+##Release 2 Tag Your Teacher
+
 * What is version control?  Why is it useful?
 
 Version control allows you to view the history of a document or software code and all the changes that were made to it over the course of time.  It allows you to merge changes made by different people on your team into a single master document.  It also allows you to revert back to a previous version should a mistake have been made say in the case that a bug was introduced, one can simply go back to a previous version of the code until the bug can be found and fixed in the latest version of the code.

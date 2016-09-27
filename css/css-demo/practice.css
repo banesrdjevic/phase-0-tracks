@@ -1,0 +1,29 @@
+
+#contact-info {
+  font-size: .8em;
+}
+
+.job {
+	background-color: #e9e5dc;
+	margin-top: 25px;
+	padding: 25px 10px 25px 10px;
+	border-radius: 25px;
+}
+
+.text-size {
+	font-size: .8em;
+}
+
+#contact-info:hover {
+  color: #ff0000;
+}
+
+ul.text-size li:nth-child(2) {
+	color: green;
+}
+
+/*Cascading => Means you can use multiple style sheets in one html doc */
+/*Conflict between two rules => Short answer, last one wins.  Long answer, browser plays a role. */
+/*Pseudo Selector => It changes something about the text font size etc once a user has clicked it.  
+	Can include hover change as well, when you just hover over a button or link.
+	Example: Google search, turns it purple. */

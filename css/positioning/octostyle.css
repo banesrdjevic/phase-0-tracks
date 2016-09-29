@@ -1,0 +1,46 @@
+body {
+  display: block;
+  position: relative;
+  border: 1pt solid black;
+  width: 400px;
+  height: 420px;
+  padding: 50px;
+  margin: 50px;
+}
+
+.octopus {
+  display: block;
+  position: relative;
+  margin-top: 80px;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  padding: 50px;
+  vertical-align: center;
+  z-index: -1;
+}
+
+.hat {
+  display: block;
+  position: absolute;
+    top: 100px;
+    right: 100px;
+    bottom: 80px;
+    left: 125px;
+  z-index: 1;
+}
+
+.glasses {
+  display: block;
+  position: absolute;
+    top: 279px;
+    right: 80px;
+    bottom: 50px;
+    left: 187px;
+  z-index: 0;
+}
+
+/*Fixed position stays in the same location on the browser window regardless of scrolling.
+Z-index moves items forward or backward on a page when they overlap.
+Relative position is relative to its normal position.  
+Absolute position is relative to the nearest positioned ancestor.*/

@@ -1,0 +1,67 @@
+
+Algorithm for Robot to use Elevator:
+
+- Approach elevator doors.
+- Locate floor number sign of current location.
+	- Note current floor.
+- Review destination location address
+	- Retrieve floor number from destination address
+- If destination floor number is lower than current location
+	- Press down button
+- If destination floor number is higher than current location
+	- Press up button
+- Wait for doors to open.
+	- Once doors open, step through doors.
+- Turn around and face doors.
+- Locate buttons on the right or left hand side of the elevator doors.
+- Locate button with number == to destination floor number.
+	- Push button.
+- Locate display with numbers above the elevator doors.
+	- Watch until the display shows destination floor number.
+	- Wait for doors to open.
+	- Once doors open, Exit Elevator.
+- Continue toward destination.
+
+
+Water Garden Planters on Patio:
+
+- Look up weather report online.
+	- If rainfall reported in past 12 hours.
+		- End / Skip task.
+	- If rain predicted in next 24 hours.
+		- End / Skip task.
+	- Else, proceed to patio doors.
+- Locate watering can to the left of patio doors.
+	- Pick up watering can.
+- Carry watering can to kitchen.
+	- Place opening of can under faucet.
+- Lift nozzle to turn on water.
+	- Fill watering can until full.
+	- Push nozzle down to turn off water.
+- Lift watering can and carry back to patio doors.
+	- Open sliding glass door.
+	- Step out onto patio.
+	- Turn around and close sliding glass doors.
+- Locate planter.
+	- Walk over to planter.
+	- Water
+		- Tip watering can to release water.
+		- Water for 8 seconds.
+		- Tip can back to level position to stop flow of water.
+- Determine if another planter exists on patio.
+	- If yes, 
+		- Repeat steps under locate planter.
+	- Else, 
+		- end watering and proceed to next step
+- Walk back towards sliding glass doors.
+	- Open door.
+	- Walk inside.
+	- Turn around.
+	- Close sliding glass door.
+- Put watering can down on shelf next to doors.
+- End
+
+	
+	
+
+

@@ -37,25 +37,48 @@ end
 
 puts "What color is the hamster?"
   h_color = gets.chomp
+  h_color.to_str
 
 h_adopt_entry = false
 until h_adopt_entry
   puts "Is it a good candidate for adoption (y/n)?"
   h_adoptable = gets.chomp
-  if h_adoptable == "y"
+  h_adoptable.downcase!
+  if h_adoptable == "y" || h_adoptable == "yes"
     h_adopt_entry = true
-  elsif h_adoptable == "n"
+  elsif h_adoptable == "n" || h_adoptable == "no"
     h_adopt_entry = true
   else
     puts "Please answer with only y or n"
   end
 end
 
+# original adopt entry below, went back and played w/ downcase and || in above
+# h_adopt_entry = false
+# until h_adopt_entry
+  # puts "Is it a good candidate for adoption (y/n)?"
+  # h_adoptable = gets.chomp
+  # if h_adoptable == "y"
+    # h_adopt_entry = true
+  # elsif h_adoptable == "n"
+    # h_adopt_entry = true
+  # else
+    # puts "Please answer with only y or n"
+  # end
+# end
+
 puts "How old is the hamster?"
-  h_age = gets.to_i
-  if h_age == 'N/A'
+  h_age = gets.strip
+  if h_age.empty?
     h_age = nil
   end
+
+# original attempt at using nil...
+# puts "How old is the hamster?"
+  # h_age = gets.to_i
+  # if h_age == 'N/A'
+    # h_age = nil
+  # end
 
 puts "Hamster Info"
 puts "#{h_name} is a great name!"

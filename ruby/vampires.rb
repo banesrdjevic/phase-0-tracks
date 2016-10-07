@@ -47,7 +47,7 @@ end
 # Release 2
 # age right
 current_yr = 2016
-if current_yr - birth_yr = age
+if current_yr - birth_yr == age
   correct_age = true
   incorrect_age = false
 else
@@ -56,10 +56,11 @@ else
 end
 
 # Check for vampire_name
+vampire_name = false 
 
-if app_name = "Drake Cula"
+if app_name == "Drake Cula"
   vampire_name = true
-elsif app_name = "Tu Fang"
+elsif app_name == "Tu Fang"
   vampire_name = true
 else
   vampire_name = false
@@ -68,7 +69,7 @@ end
 # enjoys_garlic = true or false
 # insurance_desired = true or false
 
-if vampire_name = true
+if vampire_name == true
   puts "Definitely a vampire."
 elsif incorrect_age && (hates_garlic && waives_insurance)
   puts "Almost certainly a vampire."

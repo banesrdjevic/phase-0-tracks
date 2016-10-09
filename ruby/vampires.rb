@@ -78,10 +78,28 @@ until health_answered
   end
 end
 
+# release 4 allergies
+allergies = false
+until allergies
+  puts "List an allergy and press return.  If all allergies have been listed type done and press return."
+  known_allergen = gets.chomp
+  if known_allergen == "sunshine"
+    allergies = true
+  elsif known_allergen == "done"
+    allergies = true
+  else
+  end
+end
+
 # enjoys_garlic = true or false
 # insurance_desired = true or false
 # survey results
-if vampire_name == true
+# add known allergen result
+
+if known_allergen == "sunshine"
+  puts "Probably a vampire."
+  app_count +=1
+elsif vampire_name == true
   puts "Definitely a vampire."
   app_count += 1
 elsif incorrect_age && (hates_garlic && waives_insurance)
@@ -99,6 +117,8 @@ else
 end
 
 end
+
+puts "Actually, never mind!  What do these questions have to do with anything?  Let's all be friends."
 
 # wolves_like_sunshine = true
 # wolves_like_garlic = true

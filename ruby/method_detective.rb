@@ -6,28 +6,33 @@
 
 # "iNvEsTiGaTiOn".swapcase
 # => “InVeStIgAtIoN”
-"iNvEsTiGaTiOn".swapcase
+p "iNvEsTiGaTiOn".swapcase
 
 # "zom".insert(1, "o")
 # could also use .replace "zoom" to replace the string
 # => “zoom”
-"zom".insert(1, "o")
+p "zom".insert(1, "o")
 
-# "enhance".prepend("     ")
-# "enhance".
+# "enhance".center(4)
 # => "    enhance    "
+p "enhance".center(4)
 
-# "Stop! You’re under arrest!".<???>
+# "Stop! You’re under arrest!".upcase
 # => "STOP! YOU’RE UNDER ARREST!"
+p "Stop! You’re under arrest!".upcase
 
-# "the usual".<???>
+# "the usual".insert(-1, " suspects")
 #=> "the usual suspects"
+p "the usual".insert(-1, " suspects")
+p "the usual".concat(" suspects")
 
-# " suspects".<???>
+# " suspects".prepend("the usual")
 # => "the usual suspects"
+p " suspects".prepend("the usual")
 
-# "The case of the disappearing last letter".<???>
+# "The case of the disappearing last letter".chop!
 # => "The case of the disappearing last lette"
+p "The case of the disappearing last letter".chop!
 
 # "The mystery of the missing first letter".<???>
 # => "he mystery of the missing first letter"

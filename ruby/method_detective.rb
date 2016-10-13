@@ -34,15 +34,24 @@ p " suspects".prepend("the usual")
 # => "The case of the disappearing last lette"
 p "The case of the disappearing last letter".chop!
 
-# "The mystery of the missing first letter".<???>
+# "The mystery of the missing first letter".delete("T"), .delete!, .slice, or .slice!(1,1000000)
 # => "he mystery of the missing first letter"
+p "The mystery of the missing first letter".delete("T")
+p "The mystery of the missing first letter".slice(1,100000)
 
-# "Elementary,    my   dear        Watson!".<???>
+# "Elementary,    my   dear        Watson!".squeeze
 # => "Elementary, my dear Watson!"
+p "Elementary,    my   dear        Watson!".squeeze(" ")
 
-# "z".<???>
+# "z".<???> .each_byte or .each_codepoint.to_a
 # => 122 
 # (What is the significance of the number 122 in relation to the character z?)
+p "z".each_byte.to_a
+p "z".each_codepoint.to_a
 
-# "How many times does the letter 'a' appear in this string?".<???>
+# "How many times does the letter 'a' appear in this string?".count("a")
+# not .map, .each_codepoint
 # => 4
+p "How many times does the letter 'a' appear in this string?".count("a")
+
+

@@ -26,9 +26,20 @@ end
 
 p birds
 
-# Delete if on Array
-birds.delete_if { |the_bird| the_bird[0]=="T"}
+# drop_while on Array
+new_birds = birds.drop_while { |the_bird| the_bird[0]!="W" }
+p new_birds
 
+# select! on Array
+birds.select! { |the_bird| the_bird[0]=="T" }
+p birds
+
+# Keep if on Array
+birds.keep_if { |the_bird| the_bird[0]=="T" }
+p birds
+
+# Delete if on Array
+birds.delete_if { |the_bird| the_bird[0]=="T" }
 p birds
 
 
@@ -45,11 +56,21 @@ animals.each do |animal, color|
   puts "the #{animal} is #{color}."
 end
 
-# Delete if on Array
+# Select! on Hash
+animals.select! {|animal, color| color == "green"}
 p animals
 
+# Keep if on Hash
+p animals
+animals.keep_if {|animal, color| color == "grey"}
+p animals
+
+# Delete if on Hash
+p animals
 animals.delete_if {|animal, color| color == "grey"}
-
 p animals
+
+
+
 
 

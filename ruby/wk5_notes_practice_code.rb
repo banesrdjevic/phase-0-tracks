@@ -1,4 +1,19 @@
+# Array Info for 5.2
+suitcase_items = []
 
+loop do 
+  puts "Enter an item (or type 'exit'):"
+  input = gets.chomp
+  break if input == 'exit'
+  suitcase_items << input
+end
+
+puts "Here's your packing list:"
+puts suitcase_items
+
+puts "Safe Travels!"
+
+# Hash Practice for 5.2
 post = {
   "date" => "6/10/16",
   "title" => "About My Turtle",

@@ -22,25 +22,28 @@ user_input_name = gets.chomp
 fake_names = [] # fake name array of aliases to add to and call later
 # call translate_name method with user input
 p translate_name(user_input_name)
+new_letters = []
 
 # split the name into an array of letters, use .split('')
-user_input_name.split('')
-user_input_name.class
+# user_input_name.split('')
+# user_input_name.class
 
 # conditionally replace the vowels, check against downcase
+# vowel = ["a", "e", "i", "o", "u"]
+# conditionally replace the consonants
+# consonant = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+
 def next_letter(letter) # picks up from next_vowel(name[char_index])
-    vowel = "eiou"
-    consonant = "abcdfghjklmnpqrstvwxyz"
-    if vowel.include? letter.downcase
-      vowel.next
-    elsif consonant.include? letter.downcase
-      consonant.next
+    vowel = "aeiou"
+    consonant = "bcdfghjklmnpqrstvwxyz"
+    if vowel.include?(letter.downcase)
+      letter << vowel.next
+    elsif consonant.include?(letter.downcase)
+      letter << consonant.next
     else
       " "
+    end
 end
-
-# conditionally replace the consonants
-    consonants = "abcdfghjklmnpqrstvwxyz"
 
 # return the array to a string, use .join('')
 # split the name
@@ -56,7 +59,7 @@ def translate_name(name) # picks up user_input phrase
   char_index = 0
   translated_name = ""  # start building a different string to hold the resulting phrase
   while char_index < name.length
-    translated_name << next_vowel(name[char_index])# add the letter from "phrase" that was input, into translated response, each new translated character
+    translated_name << next_letter(name[char_index])# add the letter from "phrase" that was input, into translated response, each new translated character
     char_index += 1
   end
   translated_name # return translated response after loop completes

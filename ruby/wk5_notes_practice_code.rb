@@ -90,5 +90,20 @@ p design_application
 
 # 5.3 Iteration Notes...
 
+# Notes from 5.3
 
+letters = ["a", "b", "c", "d", "e"]
+
+puts "Original data:"
+p letters
+
+# iterate through the array with .map
+letters.map! do |letter|
+# or use new_letters = letters.map do |letter|
+  puts letter
+  letter.next # evaluates to whatever last command is
+end
+
+puts "After .map call:"
+p letters
 

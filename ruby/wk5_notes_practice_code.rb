@@ -88,5 +88,7 @@ design_application[:blue_1] + design_application[:blue_2]
 p design_application[:blue_1] + design_application[:blue_2]
 p design_application
 
+# 5.3 Iteration Notes...
+
 
 

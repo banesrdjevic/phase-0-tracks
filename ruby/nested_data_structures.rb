@@ -55,3 +55,7 @@ apartment_complex = {
 # call the first apt, layout, bedroom, 1
 p apartment_complex[:apt_1][:layout][:Bedrooms]
 # call the second apt, layout, bedroom, 2
+p apartment_complex[:apt_2][:layout][:Bedrooms]
+# verify that p for apt_1 nested layout still unchanged
+p apartment_complex[:apt_1][:layout][:Bedrooms]
+

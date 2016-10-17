@@ -9,44 +9,49 @@
 
 
 apartment_complex = {
-  'lobby_items': [
-    'chairs'
-    'table'
-    'magazine'
+  lobby_items: [
+    'chairs',
+    'table',
+    'magazine',
     'mirror'
-  ]
-  'apt_1': {
-    'layout': {
+  ],
+  apt_1: {
+    layout: {
       Bedrooms: 1,
       Bath: 1
-    }
-    'pets': [
+    },
+    pets: [
       'dog',
       'cat'
     ]
-  }
-  'apt_2': {
-    'layout': {
+  },
+  apt_2: {
+    layout: {
       Bedrooms: 2,
       Bath: 1
-    }
-    'pets': [
+    },
+    pets: [
       'cat',
       'lizard'
     ]
-  }
-  'apt_3': {
-    'pets_3': [
+  },
+  apt_3: {
+    pets_3: [
       'bird', 
       'bird',
       'tarantula',
       'tarantula',
       'tarantula'
-    ]
-    'layout_3': {
+    ],
+    layout_3: {
       Bedrooms: 3,
       Bath: 2.5,
       Patio: 1
     }
   }
 }
+
+# pets test, see if you can name a nest in one structure the same as the next
+# call the first apt, layout, bedroom, 1
+p apartment_complex[:apt_1][:layout][:Bedrooms]
+# call the second apt, layout, bedroom, 2

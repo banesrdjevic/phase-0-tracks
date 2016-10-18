@@ -15,13 +15,14 @@
 # How will you deal with the fact that some letters are uppercase?
 # How will you handle edge cases?
 
-
 # collect the name
 puts "Enter a name you would like to see encrypted or type exit"
 user_input_name = gets.chomp
+user_input_name = user_input_name.split('')
+
 fake_names = [] # fake name array of aliases to add to and call later
 # call translate_name method with user input
-p translate_name(user_input_name)
+p user_input_name
 new_letters = []
 
 # split the name into an array of letters, use .split('')
@@ -29,20 +30,25 @@ new_letters = []
 # user_input_name.class
 
 # conditionally replace the vowels, check against downcase
-# vowel = ["a", "e", "i", "o", "u"]
 # conditionally replace the consonants
-# consonant = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+# vowel = "aeiou"
+# consonant = "bcdfghjklmnpqrstvwxyz"
+  # consonant = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+  # vowel = ["a", "e", "i", "o", "u"]
 
 def next_letter(letter) # picks up from next_vowel(name[char_index])
-    vowel = "aeiou"
-    consonant = "bcdfghjklmnpqrstvwxyz"
-    if vowel.include?(letter.downcase)
-      letter << vowel.next
-    elsif consonant.include?(letter.downcase)
-      letter << consonant.next
+  letter = letter.downcase
+  consonant = 'bcdfghjklmnpqrstvwxyz'
+  vowel = 'aeiou'
+  next_letter = ''
+    if vowel.include?(letter)
+      next_letter << (vowel.index(letter) + 1)
+    elsif consonant.include?(letter)
+      next_letter << (consonant.index(letter) + 1)
     else
-      " "
+      next_letter << " "
     end
+  next_letter
 end
 
 # return the array to a string, use .join('')
@@ -57,7 +63,7 @@ end
 
 def translate_name(name) # picks up user_input phrase
   char_index = 0
-  translated_name = ""  # start building a different string to hold the resulting phrase
+  translated_name = '' # start building a different string to hold the resulting phrase
   while char_index < name.length
     translated_name << next_letter(name[char_index])# add the letter from "phrase" that was input, into translated response, each new translated character
     char_index += 1
@@ -65,6 +71,7 @@ def translate_name(name) # picks up user_input phrase
   translated_name # return translated response after loop completes
 end
 
+p translate_name(user_input_name)
 
 # store fake names 
 # fake_names <<

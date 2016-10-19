@@ -18,6 +18,17 @@
 # happy
 
 
+
+
+# Notes from 6.2
+# class Puppy
+
+  # def fetch(toy)
+    # puts "I brought back the #{toy}!"
+  # end
+
+# end
+
 # Other trial stuff from 6.1
 # class puppy
 # end

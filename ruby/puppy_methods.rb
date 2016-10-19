@@ -14,16 +14,31 @@ class Puppy
     p "*rolls over*"
   end
 
+  def dog_years(integer)
+    p integer * 7
+  end
+
+  def shake
+    p "*shakes hand*"
+  end
+
+  def initialise # initialize does run w/out driver code and runs each time .new is called
+    # mis-spelling initialize doesn't throw an error, it just doesn't run...
+    p "Initializing new puppy instance..."
+  end
 
 end
 
-
 Ellie = Puppy.new
 
+# Driver Code
 Ellie.fetch("ball")
 
 Ellie.speak(4)
 
 Ellie.rollover
 
+Ellie.dog_years(10)
+
+Ellie.shake
 

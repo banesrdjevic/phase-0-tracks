@@ -3,7 +3,20 @@
 # Puppy class
 
 # Characteristics => attributes
-# size, weight, fur color, eyes, ears
+# size: small
+# weight: 
+# fur color: varies
+# friendly: yes
+# eyes: 
+# ears: floopy or pointy
+# tail: 
 
 # Behaviors => Methods 
-# rambunctious, friendly, curious, energetic, happy
+# rambunctious, 
+# curious, 
+# energetic, 
+# happy
+
+# duchess = Puppy.new
+# fido = Puppy.new
+# spot = Puppy.new

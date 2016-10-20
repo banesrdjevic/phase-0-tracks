@@ -32,14 +32,28 @@ def print_house(house)
   puts "--------------------"
 end
 
-
-
-# TEST CODE
-rooms = ["Living Room", "Kitchen", "bedroom", "bathroom", "bedroom_2", "bedroom_3"]
-
-rooms.each do |room|
-  room_added = add_room_to_house!(house, room)
-  add_item_to_room!(house, room, "cat") if room_added
+# Let the user add rooms
+can_add_rooms = true
+# Stop loop when rooms cannot be added
+while can_add_rooms
+  # Get a room name from the user
+  puts "Type the name of a room to add (or type 'done'):"
+  room_name = gets.chomp
+  # If the user is done, stop loop
+  break if room_name == 'done'
+  # Otherwise, add room to house
+  add_room_to_house!(house, room_name)
+  print_house(house)
 end
 
-p house
+# Let the user add items to rooms
+
+# TEST CODE
+# rooms = ["Living Room", "Kitchen", "bedroom", "bathroom", "bedroom_2", "bedroom_3"]
+
+# rooms.each do |room|
+  # room_added = add_room_to_house!(house, room)
+  # add_item_to_room!(house, room, "cat") if room_added
+# end
+
+# p house

@@ -8,6 +8,10 @@
 
 # BUSINESS LOGIC
 
+# def parse_room_input(room_name)
+  # add code to clean up user input
+# end
+
 def add_room_to_house!(house, room_name)
   return false if house.keys.length == 5 # another version or way to write if else statement
   house[room_name] = [] # this creates a blank array under the house hash 
@@ -16,7 +20,7 @@ def add_room_to_house!(house, room_name)
 end
 
 def add_item_to_room!(house, room_name, item_name)
-  house[room_name] << item_name
+  house[room_name] << item_name # adds items as the value, room remains as key in house hash
 end
 
 house = {}
@@ -26,8 +30,9 @@ house = {}
 def print_house(house)
   puts "--------------------"
   puts "Current House Configuration:"
-  house.each do |room_name, items| # room name is the key, items is the value
-  puts "#{room_name}: #{items}"
+  house.keys.each_with_index do |room_name, index| # .keys is array of room names, index replaces items as the value
+  # keys is the room name, each with index is the index of each room
+  puts "#{index} - #{room_name}: #{house[room_name]}" # replaced items with the equivalent house[room_name]
   end
   puts "--------------------"
 end
@@ -42,11 +47,28 @@ while can_add_rooms
   # If the user is done, stop loop
   break if room_name == 'done'
   # Otherwise, add room to house
-  add_room_to_house!(house, room_name)
+  can_add_rooms = add_room_to_house!(house, room_name)
   print_house(house)
 end
 
 # Let the user add items to rooms
+# In an infinite loop:
+loop do
+  # Ask the user for the number of the room they want to add items to
+  puts "Enter the number of the room to add an item to (or type 'done'):"
+  inputted_index = gets.chomp
+  # If the user is done, break
+  break if inputted_index == 'done' # done is referred to as a sentinel value
+  # Sentinel Values are when you check for a weird user input
+  # Otherwise, add the item to the room
+  room_index = inputted_index.to_i
+  puts "Enter item to add: "
+  item_to_add = gets.chomp
+  add_item_to_room!(house, house.keys[room_index], item_to_add) # house.keys returns array of rooms, then use brackets [] to call for specific room using index
+  # print house
+  print_house(house)
+end
+
 
 # TEST CODE
 # rooms = ["Living Room", "Kitchen", "bedroom", "bathroom", "bedroom_2", "bedroom_3"]

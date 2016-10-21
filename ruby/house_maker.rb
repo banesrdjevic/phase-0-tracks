@@ -48,6 +48,9 @@ while can_add_rooms
   break if room_name == 'done'
   # Otherwise, add room to house
   can_add_rooms = add_room_to_house!(house, room_name)
+  if !can_add_rooms
+    puts "Sorry, that's too many rooms!"
+  end
   print_house(house)
 end
 

@@ -1,6 +1,7 @@
 class Reindeer
-  # attr_reader :location
-  # attr_accessor :name # without this, line 53 won't work
+  # attr_reader :location # allows for reading only
+  # attr_accessor :name # allows for both reading and writing
+  # attr_writer :location # allows for writing only outside the class
 
   def initialize(name)
     @name = name
@@ -35,7 +36,7 @@ class Reindeer
   def name=(new_name)
     @name = new_name
   end
-  
+
 end
 
 # Way shown in video on 6.3, called about attribute instead of using getter and setter methods

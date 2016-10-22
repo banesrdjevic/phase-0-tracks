@@ -24,4 +24,17 @@ describe Calculator do
   it "multiplies two integers" do
     expect(calculator.multiply(2,3)).to eq 6
   end
+
+  # it "divides two integers" do 
+    # expect(calculator.divide(9,3)).to eq 3
+  # end
+
+  it "divides two integers" do 
+    expect{calculator.divide(9,0)}.to raise_exception(ZeroDivisionError)
+  end
+
+  # it "testerror" do
+  #   expect{3/0}.to raise_exception(ZeroDivisionError)
+  # end  
+
 end

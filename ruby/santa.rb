@@ -3,11 +3,17 @@
 
 # Santa class
 class Santa
+  # getter method allows user to read the @age and @ethnicity attributes from outside the class
+  attr_reader :age, :ethnicity
+  # getter + setter method allows user to read and write @gender from outside the class
+  attr_accessor :gender
+  
   # initialize method that prints "Initializing Santa instance ..."
-  def initialize(gender, ethnicity)
+  def initialize(gender, ethnicity, age)
     @gender = gender
     @ethnicity = ethnicity
-    @age = 0
+    # @age = 0
+    @age = age
     p "Initializing Santa instance ... #{@gender}, #{@ethnicity}, #{@age}"
   end
 
@@ -37,49 +43,78 @@ class Santa
     reindeer_ranking.push(reindeer_name)
     puts reindeer_ranking
   end
+  # getter method for @gender makes the class readable from outside the class
+  # necessary to see the before of gender to test change did occur
+  # def gender
+    # @gender
+  # end
 
-  # setter method for @gender
-  def gender=(new_gender)
-    @gender = new_gender
-  end
+  # def age
+    # @age
+  # end
+
+  # def ethnicity
+    # @ethnicity
+  # end
+  # Replaced method with attr_reader :age, :ethnicity and moved to the top
+
+
+  # setter method for @gender makes the class writeable from outside the class
+  # def gender=(new_gender)
+    # @gender = new_gender
+  # end
+  # Replaced method with attr_accessor :gender and moved to the top
+
 
 end
 
 # DRIVER CODE / TEST CODE LOGIC
 
-santas = []
-santas << Santa.new("agender", "black")
-santas << Santa.new("female", "Latino")
-santas << Santa.new("bigender", "white")
-santas << Santa.new("male", "Japanese")
-santas << Santa.new("female", "prefer not to say")
-santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
-santas << Santa.new("N/A", "N/A")
+# santas = []
+# example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+# example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
-puts "The following santas are now included..."
+# santas = []
+# santas << Santa.new("agender", "black")
+# santas << Santa.new("female", "Latino")
+# santas << Santa.new("bigender", "white")
+# santas << Santa.new("male", "Japanese")
+# santas << Santa.new("female", "prefer not to say")
+# santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
+# santas << Santa.new("N/A", "N/A")
 
-santas = []
-example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
-example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-example_genders.length.times do |i|
-  santas << Santa.new(example_genders[i], example_ethnicities[i])
-end
+# puts "The following santas are now included..."
 
-Clause = Santa.new("male", "white")
+# santas = []
+# example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+# example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+# example_genders.length.times do |i|
+  # santas << Santa.new(example_genders[i], example_ethnicities[i])
+# end
+
+# This is initializing an instance class not an individual Santa...
+Clause = Santa.new("male", "white", 10)
 Clause.class
 Clause.speak
 Clause.eat_milk_and_cookies('chocolate chip')
 Clause.celebrate_birthday
 Clause.get_mad_at("Vixen")
 
+saint_nick = Santa.new("male", "white", 12) # This is initializing an instance of Santa...
+puts "Santa's gender is #{saint_nick.gender}"
+saint_nick.gender = "Saint"
+puts "Santa's gender is now #{saint_nick.gender}"
+saint_nick.celebrate_birthday 
+puts "Santa is now #{@age} years old."
+
+santas = []
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+count = 0
+while count <= 25
+  santas << Santa.new(example_genders.sample, example_ethnicities.sample, rand(1..140))
+  count += 1
+end
+
 # See reindeer.rb for more info
-
-# class Reindeer
-  # def initialize(name)
-    # @name = name
-  # end
-# end
-
-# reindeer = Reindeer.new("Blitzen")
-# reindeer.name
 

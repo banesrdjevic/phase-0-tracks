@@ -3,6 +3,11 @@
 
 # Santa class
 class Santa
+  # getter method allows user to read the @age and @ethnicity attributes from outside the class
+  attr_reader :age, :ethnicity
+  # getter + setter method allows user to read and write @gender from outside the class
+  attr_accessor :gender
+  
   # initialize method that prints "Initializing Santa instance ..."
   def initialize(gender, ethnicity)
     @gender = gender
@@ -39,26 +44,34 @@ class Santa
   end
   # getter method for @gender makes the class readable from outside the class
   # necessary to see the before of gender to test change did occur
-  def gender
-    @gender
-  end
+  # def gender
+    # @gender
+  # end
 
-  def age
-    @age
-  end
+  # def age
+    # @age
+  # end
 
-  def ethnicity
-    @ethnicity
-  end
+  # def ethnicity
+    # @ethnicity
+  # end
+  # Replaced method with attr_reader :age, :ethnicity and moved to the top
+
 
   # setter method for @gender makes the class writeable from outside the class
-  def gender=(new_gender)
-    @gender = new_gender
-  end
+  # def gender=(new_gender)
+    # @gender = new_gender
+  # end
+  # Replaced method with attr_accessor :gender and moved to the top
+
 
 end
 
 # DRIVER CODE / TEST CODE LOGIC
+
+# santas = []
+# example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+# example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
 santas = []
 santas << Santa.new("agender", "black")
@@ -90,6 +103,11 @@ saint_nick = Santa.new("male", "white") # This is initializing an instance of Sa
 puts "Santa's gender is #{saint_nick.gender}"
 saint_nick.gender = "Saint"
 puts "Santa's gender is now #{saint_nick.gender}"
+# saint_nick.times do |x| 
+  # saint_nick.celebrate_birthday 
+puts "Santa is now #{@age} years old."
+
+
 
 # See reindeer.rb for more info
 

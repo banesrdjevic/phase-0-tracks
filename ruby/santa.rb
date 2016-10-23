@@ -37,8 +37,21 @@ class Santa
     reindeer_ranking.push(reindeer_name)
     puts reindeer_ranking
   end
+  # getter method for @gender makes the class readable from outside the class
+  # necessary to see the before of gender to test change did occur
+  def gender
+    @gender
+  end
 
-  # setter method for @gender
+  def age
+    @age
+  end
+
+  def ethnicity
+    @ethnicity
+  end
+
+  # setter method for @gender makes the class writeable from outside the class
   def gender=(new_gender)
     @gender = new_gender
   end
@@ -65,6 +78,7 @@ example_genders.length.times do |i|
   santas << Santa.new(example_genders[i], example_ethnicities[i])
 end
 
+# This is initializing an instance class not an individual Santa...
 Clause = Santa.new("male", "white")
 Clause.class
 Clause.speak
@@ -72,14 +86,10 @@ Clause.eat_milk_and_cookies('chocolate chip')
 Clause.celebrate_birthday
 Clause.get_mad_at("Vixen")
 
+saint_nick = Santa.new("male", "white") # This is initializing an instance of Santa...
+puts "Santa's gender is #{saint_nick.gender}"
+saint_nick.gender = "Saint"
+puts "Santa's gender is now #{saint_nick.gender}"
+
 # See reindeer.rb for more info
-
-# class Reindeer
-  # def initialize(name)
-    # @name = name
-  # end
-# end
-
-# reindeer = Reindeer.new("Blitzen")
-# reindeer.name
 

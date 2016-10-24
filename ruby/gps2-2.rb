@@ -76,5 +76,21 @@ list = delete_item(list, "Lemonade")
 list = update_quantity(list, "Ice Cream", 1)
 print_list(list)
 
+#REFLECTIONS - Release 5
+# Pseudocode while time consuming up front can save you a lot of time on the back end.
+# Tradeoffs between arrays and hashes are the methods that can be run on one vs the other,
+  # and the ability to store key value pairs vs just keys in arrays.
+# Method returns whatever the last line is inside the method.  
+  # If you want to return an updated list for instance, the last line needs to be list.
+# You can pass any number of things from arguments, to new keys and values and even blocks.
+# You can pass information between methods by making the output of one method what will then become the input for the next.
+# I think the one thing I wasn't truly grasping was using the... 
+  # hash_name[key_name] = value_name
+  # format along with .each to create and update an existing hash
+
+#OTHER NOTES:
+#GPS Instructor: Davina Pasciewicz
+#GPS Pair: Mark Tanca
+
 
 

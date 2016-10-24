@@ -35,18 +35,33 @@ end
 # inputs: list hash, item name
 # steps: find item key by name, update corresponding value
 # output: updated hash (updated list)
-def update_quantity()
+def update_quantity(list, item_name, new_quantity=1)
+  list[item_name] = new_quantity
+  list
 end
 # Method to print a list and make it look pretty
 # input: most recent hash/list
 # steps: iterate over and print out hash
 # output: list item and quantity
-def print_list()
-    
+def print_list(list)
+  puts 'Grocery List:'
+  puts 'Item      -      Quantity'
+  # yield
+  list.each do |item_print, quantity_print|
+    puts "#{item_print}      -      #{quantity_print}" 
+    # Believe there might be some justify methods that could be called to clean this up, 
+    # but will leave as is for now.
+  end
 end
+
 #DRIVER CODE
 items = "carrots apples cereal pizza"
 create_list(items) 
-list_output= create_list(items)
-list = delete_item(list_output, "carrots")
-puts "THIS IS THE #{list}!"
+list = create_list(items)
+puts "This is the newly created #{list}"
+list = delete_item(list, "carrots")
+list = add_item(list, "bananas")
+puts "After deleting carrots and adding bananas, this is the #{list}!"
+list = update_quantity(list, "bananas", 8)
+puts "Updated with new quantity of bananas... #{list}"
+print_list(list)

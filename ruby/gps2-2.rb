@@ -45,10 +45,10 @@ end
 # output: list item and quantity
 def print_list(list)
   puts 'Grocery List:'
-  puts 'Item      -      Quantity'
+  puts 'Quantity - Item'
   # yield
   list.each do |item_print, quantity_print|
-    puts "#{item_print}      -      #{quantity_print}" 
+    puts "#{quantity_print} - #{item_print}" 
     # Believe there might be some justify methods that could be called to clean this up, 
     # but will leave as is for now.
   end
@@ -65,3 +65,16 @@ puts "After deleting carrots and adding bananas, this is the #{list}!"
 list = update_quantity(list, "bananas", 8)
 puts "Updated with new quantity of bananas... #{list}"
 print_list(list)
+
+#RELEASE 2 TEST SOLUTIONS
+list = add_item(list, "Lemonade", 2)
+list = add_item(list, "Tomatoes", 3)
+list = add_item(list, "Onions")
+list = add_item(list, "Ice Cream", 4)
+print_list(list)
+list = delete_item(list, "Lemonade")
+list = update_quantity(list, "Ice Cream", 1)
+print_list(list)
+
+
+

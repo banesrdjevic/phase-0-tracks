@@ -1,0 +1,74 @@
+RELEASE 1 PSEUDOCODE
+Word Guessing Game
+
+#BUSINESS LOGIC
+#Behaviors / Methods
+
+#Initialize
+#Input: winning_phrase,
+#Steps: set @guess_count = 0, set @winning_phrase = winning_phrase
+#Output: @guess_count and @winning_phrase
+
+check_guess_and_count
+Input: current_guess
+Steps: create array to store previous_guesses, check current_guess against previous guesses stored in the array, if equal, don’t increment guess count
+Output: @guess_count
+
+check_word
+Input: phrase, word from user 2
+Steps: check if word = phrase
+Output: true false value for match
+
+check_letter
+Input: phrase, phrase w/ dashes, letter from user 2
+Steps: check if phrase contains letter, change dash to letter,
+Output: phrase w/ dashes, true false value for match
+
+Variables: 
+winning_phrase
+previous_guesses (array)
+current_guess
+
+#DRIVER CODE
+2 Users
+User 1 enters phrase
+convert phrase to series of dashes to show user 2
+User 2 begins to guess
+letter or word?
+if word call method to check word
+if letter call method to check letter
+if letter is correct, the dash is replaced by the letter
+Make # of guesses possible equal to word length
+If guess is the same as prev, guess does not count, 
+- store guesses and iterate through an array
+
+If letter is correct, 
+win message if winning
+lose message if losing
+
+
+
+RELEASE 0
+What behaviors does the game have?
+
+Behaviors are equivalent to methods…
+Game has initialize, shuffle, and check cups behaviors.
+
+
+What state does the game have?
+
+State is equivalent to the attributes…
+Game has the below states / characteristics / attributes…
+- guess count
+- cups
+- is over
+- game
+
+
+Observe how the driver code acts as a bridge between the class and the user. Are there times when user input cannot be passed directly to the class, and instead must be adjusted from "human logic" to "computer logic"?
+
+- Incorrect user input would be converted to nil in the case that the user doesn’t enter data correctly.  Then guess - 1 would covert that nil to a -1 which would be valid I believe.
+
+
+What would you have to change if you wanted to limit how many guesses the user gets?
+- You could adjust the while loop to include a counter.

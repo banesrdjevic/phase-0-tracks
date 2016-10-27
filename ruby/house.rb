@@ -31,6 +31,22 @@ class House
     end
   end
 
+  def total_value
+    value = 0
+    @rooms.each do |room|
+      value += room.total_value
+    end
+    value
+  end
+
+  def square_footage
+    sq_footage = 0
+    @rooms.each do |room|
+      sq_footage += (room.width * room.length)
+    end
+    sq_footage
+  end
+
   def to_s
       house_str = ""
       @rooms.each do |room|
@@ -53,7 +69,7 @@ end
 house = House.new
 
 # Make living room
-living_room = Room.new("Living room", 20, 35)
+living_room = Room.new("Living room", 10, 10)
 # puts living_room
 piano = Item.new("Piano", "black", 10000)
 box = Item.new("cardboard box", "brown", 0)
@@ -62,7 +78,7 @@ living_room.items << box
 # puts living_room.total_value
 
 # Make kitchen
-kitchen = Room.new("Kitchen", 10, 15)
+kitchen = Room.new("Kitchen", 10, 10)
 sink = Item.new("sink", "white", 5000)
 oven = Item.new("over", "black", 3000)
 kitchen.items << sink
@@ -72,6 +88,8 @@ house.add_room(living_room)
 house.add_room(kitchen)
 
 puts house
+puts house.total_value
+puts house.square_footage
 
 
 # ROOM CLASS

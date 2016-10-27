@@ -1,6 +1,20 @@
 #population density is number of people per square mile as of 2012
 #this data is updated every year with estimates from a 10 year census
 
+# GPS 3.1 RELEASE 8 - REFLECTIONS
+# Difference in hash syntaxes is that the one for population_density: 94.65, is easier to write.
+# 
+# EXPLANATION OF require_relative
+# Telling the program that you need the data inputs from the state_data.rb file.
+# Require is pulling in a method or software that is part of Ruby itself, installed and available in your machine.
+# Require_Relative is specific to a file that you want to access.
+
+# You can iterate through a hash using a while loop, or using the .each or .map functions.
+# Missed this part of virus effects at first... the instance variables are available without needing to be input as arguments.
+# Concept most solidified was definitely the ways to iterate through a hash.
+# Starting to dig into JS this week, it's sad how much I already started to forget about what we learned in week 5.  It was a good revisit of the material.
+
+
 STATE_DATA = {
   "Alabama" => {population_density: 94.65, population: 4822023},
   "Alaska" => {population_density: 1.1111, population: 731449},

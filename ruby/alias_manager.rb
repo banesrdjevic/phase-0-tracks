@@ -17,17 +17,18 @@
 
 # collect the name
 puts "Enter a name you would like to see encrypted or type exit"
-user_input_name = gets.chomp
-user_input_name = user_input_name.split('')
+user_input_name = gets.chomp.split
+# user_input_name = user_input_name.split('')
+
+# split the name into an array of letters, use .split('')
+# user_input_name.split('')
+# user_input_name.class
 
 fake_names = [] # fake name array of aliases to add to and call later
 # call translate_name method with user input
 p user_input_name
 new_letters = []
 
-# split the name into an array of letters, use .split('')
-# user_input_name.split('')
-# user_input_name.class
 
 # conditionally replace the vowels, check against downcase
 # conditionally replace the consonants
@@ -42,7 +43,7 @@ def next_letter(letter) # picks up from next_vowel(name[char_index])
   vowel = 'aeiou'
   next_letter = ''
     if vowel.include?(letter)
-      next_letter << (vowel.index(letter) + 1)
+      next_letter << vowel[(vowel.index(letter) + 1)]
     elsif consonant.include?(letter)
       next_letter << (consonant.index(letter) + 1)
     else

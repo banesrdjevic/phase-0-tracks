@@ -15,20 +15,6 @@
 # How will you deal with the fact that some letters are uppercase?
 # How will you handle edge cases?
 
-# collect the name
-puts "Enter a name you would like to see encrypted or type exit"
-user_input_name = gets.chomp.split
-# user_input_name = user_input_name.split('')
-
-# split the name into an array of letters, use .split('')
-# user_input_name.split('')
-# user_input_name.class
-
-fake_names = [] # fake name array of aliases to add to and call later
-# call translate_name method with user input
-p user_input_name
-new_letters = []
-
 
 # conditionally replace the vowels, check against downcase
 # conditionally replace the consonants
@@ -50,6 +36,13 @@ def next_letter(letter) # picks up from next_vowel(name[char_index])
       next_letter << " "
     end
   next_letter
+end
+
+def first_name_encrypt
+  consonant = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z", "b"]
+  vowel = ["a", "e", "i", "o", "u", "a"]
+  
+
 end
 
 # return the array to a string, use .join('')
@@ -85,6 +78,21 @@ p translate_name(user_input_name)
     # if name == "exit"
 # end
 
+
+# collect the name
+puts "Enter a name you would like to see encrypted or type exit"
+user_input_name = gets.chomp.split
+
+# user_input_name = user_input_name.split('')
+
+# split the name into an array of letters, use .split('')
+# user_input_name.split('')
+# user_input_name.class
+
+fake_names = [] # fake name array of aliases to add to and call later
+# call translate_name method with user input
+p user_input_name
+new_letters = []
 
 
 
